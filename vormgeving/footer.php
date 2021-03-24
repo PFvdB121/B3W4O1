@@ -1,1 +1,1 @@
-<footer>&copy; Patrique Fernando van den Boom</footer>
+<footer>&copy; Patrique Fernando van den Boom 2020</footer>
