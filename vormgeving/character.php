@@ -2,7 +2,7 @@
 	require 'connection.php'; 
 	require 'function.php';
 	if (isset($_GET['id'])) {
-		$person_id = $_GET['id'];
+		$person_id = htmlspecialchars($_GET['id']);
 	}
 	else{
 		$person_id = 0;
@@ -10,7 +10,7 @@
 	$result = getCharacter($person_id);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>Character - <?php echo $result['name']?></title>
@@ -25,7 +25,7 @@
 		<div id="container">
 			<div class="detail">
 				<div class="left">
-					<img class="avatar" src="resources/images/<?php echo $result['avatar']; ?>">
+					<img class="avatar" alt="<?php echo $result['name'] ?>" src="resources/images/<?php echo $result['avatar']; ?>">
 					<div class="stats" style="background-color: <?php echo $result['color'];?>">
 						<ul class="fa-ul">
 							<li><span class="fa-li"><i class="fas fa-heart"></i></span> <?php echo $result['health'];?></li>
